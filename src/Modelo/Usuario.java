@@ -6,10 +6,11 @@ package Modelo;
 
 /**
  *
- * @author Usuario
+ * @author Dell Notebook
  */
+// Clase Usuario
 public class Usuario {
-    private int idUsuario;
+private int idUsuario;
 private String usuario;
 private String contrasena;
 
@@ -37,12 +38,12 @@ private String contrasena;
         this.contrasena = contrasena;
     }
 
+    public Usuario() {
+    }
+
     public Usuario(int idUsuario, String usuario, String contrasena) {
         this.idUsuario = idUsuario;
         this.usuario = usuario;
         this.contrasena = contrasena;
-    }
-
-    public Usuario() {
     }
 }

@@ -6,17 +6,18 @@ package Modelo;
 
 /**
  *
- * @author Usuario
+ * @author Dell Notebook
  */
+// Clase Cliente
 public class Cliente {
-  private int idCliente;
+private int idCliente;
 private String primerNombre;
 private String segundoNombre;
 private String primerApellido;
 private String segundoApellido;
 private String celular;
 private String direccion;
-private String cedula;  
+private String cedula;
 
     public int getIdCliente() {
         return idCliente;
@@ -82,6 +83,9 @@ private String cedula;
         this.cedula = cedula;
     }
 
+    public Cliente() {
+    }
+
     public Cliente(int idCliente, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String celular, String direccion, String cedula) {
         this.idCliente = idCliente;
         this.primerNombre = primerNombre;
@@ -92,7 +96,6 @@ private String cedula;
         this.direccion = direccion;
         this.cedula = cedula;
     }
-
-    public Cliente() {
-    }
 }
+    
+

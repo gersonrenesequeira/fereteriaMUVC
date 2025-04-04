@@ -6,14 +6,16 @@ package Modelo;
 
 /**
  *
- * @author Usuario
+ * @author Dell Notebook
  */
+// Clase DetalleCompra
 public class DetalleCompra {
-   private int idDetalleCompra;
-private Compra compra; // Relación con Compra
-private Producto producto; // Relación con Producto
+    
+private int idDetalleCompra;
+private int idCompra; // Relación con Compra
+private int idProducto; // Relación con Producto
 private int cantidad;
-private float precioUnitario; 
+private float precioUnitario;
 
     public int getIdDetalleCompra() {
         return idDetalleCompra;
@@ -23,20 +25,20 @@ private float precioUnitario;
         this.idDetalleCompra = idDetalleCompra;
     }
 
-    public Compra getCompra() {
-        return compra;
+    public int getIdCompra() {
+        return idCompra;
     }
 
-    public void setCompra(Compra compra) {
-        this.compra = compra;
+    public void setIdCompra(int idCompra) {
+        this.idCompra = idCompra;
     }
 
-    public Producto getProducto() {
-        return producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public int getCantidad() {
@@ -55,14 +57,16 @@ private float precioUnitario;
         this.precioUnitario = precioUnitario;
     }
 
-    public DetalleCompra(int idDetalleCompra, Compra compra, Producto producto, int cantidad, float precioUnitario) {
+    public DetalleCompra() {
+    }
+
+    public DetalleCompra(int idDetalleCompra, int idCompra, int idProducto, int cantidad, float precioUnitario) {
         this.idDetalleCompra = idDetalleCompra;
-        this.compra = compra;
-        this.producto = producto;
+        this.idCompra = idCompra;
+        this.idProducto = idProducto;
         this.cantidad = cantidad;
         this.precioUnitario = precioUnitario;
     }
 
-    public DetalleCompra() {
-    }
+   
 }

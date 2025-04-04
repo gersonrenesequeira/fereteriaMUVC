@@ -7,10 +7,12 @@ import java.util.Date;
 
 /**
  *
- * @author Usuario
+ * @author Dell Notebook
  */
+// Clase Empleado
+
 public class Empleado {
-    private int idEmpleado;
+private int idEmpleado;
 private String primerNombre;
 private String segundoNombre;
 private String primerApellido;
@@ -83,6 +85,9 @@ private Date fechaContratacion;
         this.fechaContratacion = fechaContratacion;
     }
 
+    public Empleado() {
+    }
+
     public Empleado(int idEmpleado, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String celular, String cargo, Date fechaContratacion) {
         this.idEmpleado = idEmpleado;
         this.primerNombre = primerNombre;
@@ -92,8 +97,5 @@ private Date fechaContratacion;
         this.celular = celular;
         this.cargo = cargo;
         this.fechaContratacion = fechaContratacion;
-    }
-
-    public Empleado() {
     }
 }
