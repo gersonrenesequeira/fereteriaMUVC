@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import Modelo.Categoria;
 import Util.ConexionDB;
 import java.sql.Connection;
@@ -30,15 +33,38 @@ public class CategoriaDAO {
 }
 public static void main(String[] args) {
     try {
-        CategoriaDAO dao = new CategoriaDAO();
-        Categoria c1 = new Categoria();
-        c1.setNombreCategoria("Construcción");
-        c1.setDescripcionCategoria("Herramientas de cosntrucción");
-        dao.crearCategoria(c1);
-        System.out.println("Categoría creada con éxito!");
+         CategoriaDAO dao = new CategoriaDAO();
+        
+         List<Categoria> categorias = dao.leerTodasCategorias();
+        System.out.println("\nLista de categorías:");
+        for (Categoria cat : categorias) {
+        System.out.println("ID: " + cat.getIdCategoria() +
+
+        ", Nombre: " + cat.getNombreCategoria() +
+        ", Descripción: " + cat.getDescripcionCategoria());
+
+        }
     } catch (SQLException e) {
         System.err.println("Error: " + e.getMessage());
         }
     }
+
+// Método para leer todas las categorías
+public List<Categoria> leerTodasCategorias() throws SQLException {
+    String sql = "SELECT * FROM Categorias";
+    List<Categoria> categorias = new ArrayList<>();
+    try (Connection c = ConexionDB.getConnection();
+    PreparedStatement stmt = c.prepareStatement(sql);
+    ResultSet rs = stmt.executeQuery()) {
+        while (rs.next()) {
+        Categoria categoria = new Categoria();
+        categoria.setIdCategoria(rs.getInt("id_categoria"));
+        categoria.setNombreCategoria(rs.getString("nombre_categoria"));
+        categoria.setDescripcionCategoria(rs.getString("descripcion_categoria"));
+        categorias.add(categoria);
+        }
+        }
+    return categorias;
+    }
     
-}
+}                           
