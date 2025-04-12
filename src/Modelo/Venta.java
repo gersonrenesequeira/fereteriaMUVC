@@ -3,22 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
+
 import java.util.Date;
 import java.util.List;
-
 /**
  *
- * @author Dell Notebook
+ * @author welvi
  */
-// Clase Venta
 public class Venta {
-    
 private int idVenta;
-private int idCliente; // Relación con Cliente
-private int idEmpleado; // Relación con Empleado
+private int cliente; // Relación con Cliente
+private int empleado; // Relación con Empleado
 private Date fechaVenta;
 private float totalVenta;
-private List<DetalleVenta> detalles; // Relación con DetalleVenta
+private List<DetalleVenta> detalles;
+
+    public Venta(int idVenta, int cliente, int empleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
+        this.idVenta = idVenta;
+        this.cliente = cliente;
+        this.empleado = empleado;
+        this.fechaVenta = fechaVenta;
+        this.totalVenta = totalVenta;
+        this.detalles = detalles;
+    }
+
+    public Venta() {
+    }
+ // Relación con DetalleVenta
 
     public int getIdVenta() {
         return idVenta;
@@ -28,20 +39,20 @@ private List<DetalleVenta> detalles; // Relación con DetalleVenta
         this.idVenta = idVenta;
     }
 
-    public int getIdCliente() {
-        return idCliente;
+    public int getCliente() {
+        return cliente;
     }
 
-    public void setIdCliente(int idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(int cliente) {
+        this.cliente = cliente;
     }
 
-    public int getIdEmpleado() {
-        return idEmpleado;
+    public int getEmpleado() {
+        return empleado;
     }
 
-    public void setIdEmpleado(int idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public void setEmpleado(int empleado) {
+        this.empleado = empleado;
     }
 
     public Date getFechaVenta() {
@@ -68,16 +79,21 @@ private List<DetalleVenta> detalles; // Relación con DetalleVenta
         this.detalles = detalles;
     }
 
-    public Venta() {
+    public int getIdCliente() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public Venta(int idVenta, int idCliente, int idEmpleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
-        this.idVenta = idVenta;
-        this.idCliente = idCliente;
-        this.idEmpleado = idEmpleado;
-        this.fechaVenta = fechaVenta;
-        this.totalVenta = totalVenta;
-        this.detalles = detalles;
+    public int getIdEmpleado() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setIdCliente(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public void setIdEmpleado(int aInt) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
+

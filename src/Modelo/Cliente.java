@@ -6,10 +6,10 @@ package Modelo;
 
 /**
  *
- * @author Dell Notebook
+ * @author welvi
  */
-// Clase Cliente
 public class Cliente {
+    
 private int idCliente;
 private String primerNombre;
 private String segundoNombre;
@@ -83,9 +83,6 @@ private String cedula;
         this.cedula = cedula;
     }
 
-    public Cliente() {
-    }
-
     public Cliente(int idCliente, String primerNombre, String segundoNombre, String primerApellido, String segundoApellido, String celular, String direccion, String cedula) {
         this.idCliente = idCliente;
         this.primerNombre = primerNombre;
@@ -96,6 +93,8 @@ private String cedula;
         this.direccion = direccion;
         this.cedula = cedula;
     }
-}
-    
 
+    public Cliente() {
+    }
+    
+}

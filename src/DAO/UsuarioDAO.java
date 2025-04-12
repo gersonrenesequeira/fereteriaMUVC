@@ -2,25 +2,41 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Dao;
 import Modelo.Usuario;
-import Util.ConexionDB;
+import Util.ConnectionDB;
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author Dell Notebook
+ * @author Estudiantes
  */
-  public class UsuarioDAO {
-    public List<Usuario> leerTodosUsuarios() throws SQLException {
+public class UsuarioDAO {
+    public void crearUsuario(Usuario usuario) throws SQLException {
+    String sql = """
+        INSERT INTO Usuarios (
+            usuario, 
+            contraseña
+        ) VALUES (?, ?)""";
+    
+    try (Connection c = ConnectionDB.getConnection();
+         PreparedStatement stmt = c.prepareStatement(sql)) {
+        stmt.setString(1, usuario.getUsuario());
+        stmt.setString(2, usuario.getContrasena());
+        stmt.executeUpdate();
+    }
+    }
+     public List<Usuario> leerTodosUsuarios() throws SQLException {
         String sql = "SELECT * FROM Usuarios";
         List<Usuario> usuarios = new ArrayList<>();
 
-        try (Connection c = ConexionDB.getConnection();
+        try (Connection c = ConnectionDB.getConnection();
              PreparedStatement stmt = c.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
@@ -34,10 +50,10 @@ import java.util.List;
         return usuarios;
     }
 
-  public static void main(String[] args) {
-        try {
-            UsuarioDAO dao = new UsuarioDAO();
-            List<Usuario> usuarios = dao.leerTodosUsuarios();
+    public static void main(String[] args) {
+    try {
+        UsuarioDAO dao = new UsuarioDAO();
+        List<Usuario> usuarios = dao.leerTodosUsuarios();
             System.out.println("Lista de usuarios:");
             for (Usuario usu : usuarios) {
                 System.out.println("ID: " + usu.getIdUsuario() + 

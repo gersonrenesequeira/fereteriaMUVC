@@ -2,27 +2,44 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package DAO;
+package Dao;
 import Modelo.DetalleCompra;
-import Util.ConexionDB;
+import Util.ConnectionDB;
+import java.sql.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-
 /**
  *
- * @author Dell Notebook
+ * @author Estudiantes
  */
-    public class DetalleCompraDAO {
+public class DetalleCompraDAO {
+    public void crearDetalleCompra(DetalleCompra detalle) throws SQLException {
+    String sql = """
+        INSERT INTO Detalles_Compras (
+            id_compra, 
+            id_producto, 
+            cantidad, 
+            precio_unitario
+        ) VALUES (?, ?, ?, ?)""";
+    
+    try (Connection c = ConnectionDB.getConnection();
+         PreparedStatement stmt = c.prepareStatement(sql)) {
+        stmt.setInt(1, detalle.getIdCompra());
+        stmt.setInt(2, detalle.getIdProducto());
+        stmt.setInt(3, detalle.getCantidad());
+        stmt.setFloat(4, detalle.getPrecioUnitario());
+        stmt.executeUpdate();
+    }
+    }
     public List<DetalleCompra> leerTodosDetallesCompra() throws SQLException {
         String sql = "SELECT * FROM Detalles_Compras";
         List<DetalleCompra> detalles = new ArrayList<>();
 
-        try (Connection c = ConexionDB.getConnection();
+        try (Connection c = ConnectionDB.getConnection();
              PreparedStatement stmt = c.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
@@ -37,10 +54,11 @@ import java.util.List;
         }
         return detalles;
     }
-    public static void main(String[] args) {
-        try {
-            DetalleCompraDAO dao = new DetalleCompraDAO();
-            List<DetalleCompra> detalles = dao.leerTodosDetallesCompra();
+
+public static void main(String[] args) {
+    try {
+        DetalleCompraDAO dao = new DetalleCompraDAO();
+      List<DetalleCompra> detalles = dao.leerTodosDetallesCompra();
             System.out.println("Lista de detalles de compra:");
             for (DetalleCompra det : detalles) {
                 System.out.println("ID: " + det.getIdDetalleCompra() + 
@@ -54,5 +72,3 @@ import java.util.List;
         }
     }
 }
-
-
