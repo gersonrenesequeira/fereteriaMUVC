@@ -6,8 +6,8 @@ package Controlador;
 
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
-public class java {
+public class DetalleVentaControlador {
     
 }

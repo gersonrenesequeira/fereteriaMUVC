@@ -6,12 +6,13 @@ package Modelo;
 
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
+// Clase Categoria
 public class Categoria {
-    private int idCategoria;
-    private String nombreCategoria;
-    private String descripcionCategoria;
+private int idCategoria;
+private String nombreCategoria;
+private String descripcionCategoria;
 
     public int getIdCategoria() {
         return idCategoria;
@@ -37,13 +38,13 @@ public class Categoria {
         this.descripcionCategoria = descripcionCategoria;
     }
 
+    public Categoria() {
+    }
+
     public Categoria(int idCategoria, String nombreCategoria, String descripcionCategoria) {
         this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.descripcionCategoria = descripcionCategoria;
     }
-
-    public Categoria() {
-    }
-    
 }
+

@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * @author Dell Notebook
+ * @author StanChad
  */
 public class ClienteDAO {
 
@@ -96,13 +96,13 @@ public class ClienteDAO {
             ClienteDAO dao = new ClienteDAO();
              Cliente cliente = new Cliente();
         cliente.setIdCliente(1); // ID existente
-        cliente.setPrimerNombre("goku");
-        cliente.setSegundoNombre("776");
-        cliente.setPrimerApellido("chad");
-        cliente.setSegundoApellido("lazo");
-        cliente.setCelular("1212178");
-        cliente.setDireccion("peru");
-        cliente.setCedula("1234wew");
+        cliente.setPrimerNombre("staling");
+        cliente.setSegundoNombre("gosling");
+        cliente.setPrimerApellido("loaisiga");
+        cliente.setSegundoApellido("hurte");
+        cliente.setCelular("12345678");
+        cliente.setDireccion("Calle 123");
+        cliente.setCedula("12345678");
         dao.actualizarCliente(cliente);
         System.out.println("Cliente actualizado.");
        

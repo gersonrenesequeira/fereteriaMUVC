@@ -6,29 +6,18 @@ package Modelo;
 
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
+// Clase Producto
 public class Producto {
-    private int idProducto;
-     private String nombreProducto;
-     private String descripcionProducto;
-     private int categoria; // Relación con Categoria
-     private float precioUnitario;
-     private int stock;
-     private String imagen;
-     
-    public Producto(int idProducto, String nombreProducto, String descripcionProducto, int categoria, float precioUnitario, int stock, String imagen) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcionProducto = descripcionProducto;
-        this.categoria = categoria;
-        this.precioUnitario = precioUnitario;
-        this.stock = stock;
-        this.imagen = imagen;
-    }
-
-    public Producto() {
-    }
+    
+private int idProducto;
+private String nombreProducto;
+private String descripcionProducto;
+private int idCategoria; // Relación con Categoria
+private float precioUnitario;
+private int stock;
+private String imagen;
 
     public int getIdProducto() {
         return idProducto;
@@ -54,12 +43,12 @@ public class Producto {
         this.descripcionProducto = descripcionProducto;
     }
 
-    public int getCategoria() {
-        return categoria;
+    public int getIdCategoria() {
+        return idCategoria;
     }
 
-    public void setCategoria(int categoria) {
-        this.categoria = categoria;
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
     public float getPrecioUnitario() {
@@ -86,12 +75,18 @@ public class Producto {
         this.imagen = imagen;
     }
 
-    public int getIdCategoria() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Producto() {
     }
 
-    public void setIdCategoria(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Producto(int idProducto, String nombreProducto, String descripcionProducto, int idCategoria, float precioUnitario, int stock, String imagen) {
+        this.idProducto = idProducto;
+        this.nombreProducto = nombreProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.idCategoria = idCategoria;
+        this.precioUnitario = precioUnitario;
+        this.stock = stock;
+        this.imagen = imagen;
     }
-     
+
+    
 }

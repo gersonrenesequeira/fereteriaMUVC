@@ -6,20 +6,13 @@ package Modelo;
 
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
-
-    
+// Clase Usuario
 public class Usuario {
-
-    public Usuario(int idUsuario, String usuario, String contrasena) {
-        this.idUsuario = idUsuario;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
-    }
-
-    public Usuario() {
-    }
+private int idUsuario;
+private String usuario;
+private String contrasena;
 
     public int getIdUsuario() {
         return idUsuario;
@@ -44,7 +37,13 @@ public class Usuario {
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
     }
-private int idUsuario;
-private String usuario;
-private String contrasena;
+
+    public Usuario() {
+    }
+
+    public Usuario(int idUsuario, String usuario, String contrasena) {
+        this.idUsuario = idUsuario;
+        this.usuario = usuario;
+        this.contrasena = contrasena;
+    }
 }

@@ -3,30 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-
 import java.util.Date;
 import java.util.List;
+
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
+// Clase Compra
 public class Compra {
-  private int idCompra;
-private int empleado; // Relación con Empleado
+    
+private int idCompra;
+private int idEmpleado; // Relación con Empleado
 private Date fechaCompra;
 private float totalCompra;
 private List<DetalleCompra> detalles; // Relación con DetalleCompra
-
-    public Compra(int idCompra, int empleado, Date fechaCompra, float totalCompra, List<DetalleCompra> detalles) {
-        this.idCompra = idCompra;
-        this.empleado = empleado;
-        this.fechaCompra = fechaCompra;
-        this.totalCompra = totalCompra;
-        this.detalles = detalles;
-    }
-
-    public Compra() {
-    }
 
     public int getIdCompra() {
         return idCompra;
@@ -36,12 +27,12 @@ private List<DetalleCompra> detalles; // Relación con DetalleCompra
         this.idCompra = idCompra;
     }
 
-    public int getEmpleado() {
-        return empleado;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public void setEmpleado(int empleado) {
-        this.empleado = empleado;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public Date getFechaCompra() {
@@ -68,12 +59,16 @@ private List<DetalleCompra> detalles; // Relación con DetalleCompra
         this.detalles = detalles;
     }
 
-    public int getIdEmpleado() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Compra() {
     }
 
-    public void setIdEmpleado(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Compra(int idCompra, int idEmpleado, Date fechaCompra, float totalCompra, List<DetalleCompra> detalles) {
+        this.idCompra = idCompra;
+        this.idEmpleado = idEmpleado;
+        this.fechaCompra = fechaCompra;
+        this.totalCompra = totalCompra;
+        this.detalles = detalles;
     }
 
+    
 }

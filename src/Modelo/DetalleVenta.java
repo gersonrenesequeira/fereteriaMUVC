@@ -6,25 +6,16 @@ package Modelo;
 
 /**
  *
- * @author welvi
+ * @author Dell Notebook
  */
+// Clase DetalleVenta
 public class DetalleVenta {
+    
 private int idDetalleVenta;
-private int venta; // Relación con Venta
-private int producto; // Relación con Producto
+private int idVenta; // Relación con Venta
+private int idProducto; // Relación con Producto
 private int cantidad;
 private float precioUnitario;
-
-    public DetalleVenta(int idDetalleVenta, int venta, int producto, int cantidad, float precioUnitario) {
-        this.idDetalleVenta = idDetalleVenta;
-        this.venta = venta;
-        this.producto = producto;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
-    }
-
-    public DetalleVenta() {
-    }
 
     public int getIdDetalleVenta() {
         return idDetalleVenta;
@@ -34,20 +25,20 @@ private float precioUnitario;
         this.idDetalleVenta = idDetalleVenta;
     }
 
-    public int getVenta() {
-        return venta;
+    public int getIdVenta() {
+        return idVenta;
     }
 
-    public void setVenta(int venta) {
-        this.venta = venta;
+    public void setIdVenta(int idVenta) {
+        this.idVenta = idVenta;
     }
 
-    public int getProducto() {
-        return producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setProducto(int producto) {
-        this.producto = producto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public int getCantidad() {
@@ -66,20 +57,16 @@ private float precioUnitario;
         this.precioUnitario = precioUnitario;
     }
 
-    public int getIdVenta() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public DetalleVenta() {
     }
 
-    public int getIdProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public DetalleVenta(int idDetalleVenta, int idVenta, int idProducto, int cantidad, float precioUnitario) {
+        this.idDetalleVenta = idDetalleVenta;
+        this.idVenta = idVenta;
+        this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
     }
 
-    public void setIdVenta(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    public void setIdProducto(int i) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+   
 }
