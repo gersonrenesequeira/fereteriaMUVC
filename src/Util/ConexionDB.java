@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class ConexionDB {
     private static final String URL = "jdbc:mysql://localhost:3306/ferreteria_bd";
     private static final String USAER = "root";
-    private static final String PASSWORD = "Staling#123";
+    private static final String PASSWORD = "gerson2024";
     
     public static Connection getConnection() throws SQLException {
         try {

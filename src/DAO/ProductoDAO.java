@@ -3,73 +3,48 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package DAO;
-
 import Modelo.Producto;
 import Util.ConexionDB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 /**
  *
- * @author Dell Notebook
+ * @author Gena
  */
 public class ProductoDAO {
-
     public void crearProducto(Producto producto) throws SQLException {
-        String sql = """
-            INSERT INTO Productos (
-                nombre_producto, 
-                descripcion_producto, 
-                id_categoria, 
-                precio_unitario, 
-                stock, 
-                imagen
-            ) VALUES (?, ?, ?, ?, ?, ?)""";
-
-        try (Connection c = ConexionDB.getConnection(); PreparedStatement stmt = c.prepareStatement(sql)) {
-            stmt.setString(1, producto.getNombreProducto());
-            stmt.setString(2, producto.getDescripcionProducto());
-            stmt.setInt(3, producto.getIdCategoria());
-            stmt.setFloat(4, producto.getPrecioUnitario());
-            stmt.setInt(5, producto.getStock());
-            stmt.setString(6, producto.getImagen());
-            stmt.executeUpdate();
-        }
+    String sql = """
+        INSERT INTO Productos (
+            nombre_producto, 
+            descripcion_producto, 
+            id_categoria, 
+            precio_unitario, 
+            stock, 
+            imagen
+        ) VALUES (?, ?, ?, ?, ?, ?)""";
+    try (Connection c = ConexionDB.getConnection();
+         PreparedStatement stmt = c.prepareStatement(sql)) {
+        stmt.setString(1, producto.getNombreProducto());
+        stmt.setString(2, producto.getDescripcionProducto());
+        stmt.setInt(3, producto.getIdCategoria());
+        stmt.setFloat(4, producto.getPrecioUnitario());
+        stmt.setInt(5, producto.getStock());
+        stmt.setString(6, producto.getImagen());
+        stmt.executeUpdate();
     }
-
-    public void actualizarProducto(Producto producto) throws SQLException {
-        String sql = "UPDATE Productos SET nombre_producto = ?, descripcion_producto = ?, id_categoria = ?, precio_unitario = ?, stock = ?, imagen = ? WHERE id_producto = ?";
-
-        try (Connection c = ConexionDB.getConnection(); PreparedStatement stmt = c.prepareStatement(sql)) {
-            stmt.setString(1, producto.getNombreProducto());
-            stmt.setString(2, producto.getDescripcionProducto());
-            stmt.setInt(3, producto.getIdCategoria());
-            stmt.setFloat(4, producto.getPrecioUnitario());
-            stmt.setInt(5, producto.getStock());
-            stmt.setString(6, producto.getImagen());
-            stmt.setInt(7, producto.getIdProducto());
-            stmt.executeUpdate();
-        }
-    }
-
-    public void eliminarProducto(int idProducto) throws SQLException {
-        String sql = "DELETE FROM Productos WHERE id_producto = ?";
-
-        try (Connection c = ConexionDB.getConnection(); PreparedStatement stmt = c.prepareStatement(sql)) {
-            stmt.setInt(1, idProducto);
-            stmt.executeUpdate();
-        }
-    }
-
-    public List<Producto> leerTodosProductos() throws SQLException {
+}
+    
+     public List<Producto> leerTodosProductos() throws SQLException {
         String sql = "SELECT * FROM Productos";
         List<Producto> productos = new ArrayList<>();
 
-        try (Connection c = ConexionDB.getConnection(); PreparedStatement stmt = c.prepareStatement(sql); ResultSet rs = stmt.executeQuery()) {
+        try (Connection c = ConexionDB.getConnection();
+             PreparedStatement stmt = c.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 Producto producto = new Producto();
                 producto.setIdProducto(rs.getInt("id_producto"));
@@ -84,6 +59,33 @@ public class ProductoDAO {
         }
         return productos;
     }
+     public void actualizarProducto(Producto producto) throws SQLException {
+    String sql = "UPDATE Productos SET nombre_producto = ?, descripcion_producto = ?, id_categoria = ?, precio_unitario = ?, stock = ?, imagen = ? WHERE id_producto = ?";
+    
+    try (Connection c = ConexionDB.getConnection();
+         PreparedStatement stmt = c.prepareStatement(sql)) {
+        stmt.setString(1, producto.getNombreProducto());
+        stmt.setString(2, producto.getDescripcionProducto());
+        stmt.setInt(3, producto.getIdCategoria());
+        stmt.setFloat(4, producto.getPrecioUnitario());
+        stmt.setInt(5, producto.getStock());
+        stmt.setString(6, producto.getImagen());
+        stmt.setInt(7, producto.getIdProducto());
+        stmt.executeUpdate();
+    }
+}
+
+// Método para eliminar un producto
+public void eliminarProducto(int idProducto) throws SQLException {
+    String sql = "DELETE FROM Productos WHERE id_producto = ?";
+    
+    try (Connection c = ConexionDB.getConnection();
+         PreparedStatement stmt = c.prepareStatement(sql)) {
+        stmt.setInt(1, idProducto);
+        stmt.executeUpdate();
+    }
+}
+
 
     public static void main(String[] args) {
         try {

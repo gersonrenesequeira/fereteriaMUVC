@@ -6,16 +6,28 @@ package Modelo;
 
 /**
  *
- * @author Dell Notebook
+ * @author Gena
  */
-// Clase DetalleVenta
+
 public class DetalleVenta {
+    private int idDetalleVenta;
+    private int idVenta; // Relación con Venta
+    private int idProducto; // Relación con Producto
+    private int cantidad;
+    private float precioUnitario;
+
     
-private int idDetalleVenta;
-private int idVenta; // Relación con Venta
-private int idProducto; // Relación con Producto
-private int cantidad;
-private float precioUnitario;
+    public DetalleVenta(int idDetalleVenta, int idVenta, int idProducto, int cantidad, float precioUnitario) {
+        this.idDetalleVenta = idDetalleVenta;
+        this.idVenta = idVenta;
+        this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+    }
+
+    public DetalleVenta() {
+       
+    }
 
     public int getIdDetalleVenta() {
         return idDetalleVenta;
@@ -57,16 +69,5 @@ private float precioUnitario;
         this.precioUnitario = precioUnitario;
     }
 
-    public DetalleVenta() {
-    }
-
-    public DetalleVenta(int idDetalleVenta, int idVenta, int idProducto, int cantidad, float precioUnitario) {
-        this.idDetalleVenta = idDetalleVenta;
-        this.idVenta = idVenta;
-        this.idProducto = idProducto;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
-    }
-
-   
+    
 }

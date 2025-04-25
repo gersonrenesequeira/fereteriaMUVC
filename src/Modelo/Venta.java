@@ -3,22 +3,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Modelo;
-import java.util.Date;
-import java.util.List;
 
 /**
  *
- * @author Dell Notebook
+ * @author Gena
  */
-// Clase Venta
+
+import java.util.Date;
+import java.util.List;
 public class Venta {
-    
-private int idVenta;
-private int idCliente; // Relación con Cliente
-private int idEmpleado; // Relación con Empleado
-private Date fechaVenta;
-private float totalVenta;
-private List<DetalleVenta> detalles; // Relación con DetalleVenta
+    private int idVenta;
+    private int idCliente; // Relación con Cliente
+    private int idEmpleado; // Relación con Empleado
+    private Date fechaVenta;
+    private float totalVenta;
+    private List<DetalleVenta> detalles; // Relación con DetalleVenta
+
+    public Venta() {
+    }
+
+    public Venta(int idVenta, int idCliente, int idEmpleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
+        this.idVenta = idVenta;
+        this.idCliente = idCliente;
+        this.idEmpleado = idEmpleado;
+        this.fechaVenta = fechaVenta;
+        this.totalVenta = totalVenta;
+        this.detalles = detalles;
+    }
 
     public int getIdVenta() {
         return idVenta;
@@ -68,16 +79,5 @@ private List<DetalleVenta> detalles; // Relación con DetalleVenta
         this.detalles = detalles;
     }
 
-    public Venta() {
-    }
-
-    public Venta(int idVenta, int idCliente, int idEmpleado, Date fechaVenta, float totalVenta, List<DetalleVenta> detalles) {
-        this.idVenta = idVenta;
-        this.idCliente = idCliente;
-        this.idEmpleado = idEmpleado;
-        this.fechaVenta = fechaVenta;
-        this.totalVenta = totalVenta;
-        this.detalles = detalles;
-    }
-
+   
 }

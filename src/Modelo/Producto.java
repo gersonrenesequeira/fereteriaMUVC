@@ -6,18 +6,30 @@ package Modelo;
 
 /**
  *
- * @author Dell Notebook
+ * @author Gena
  */
-// Clase Producto
 public class Producto {
-    
-private int idProducto;
-private String nombreProducto;
-private String descripcionProducto;
-private int idCategoria; // Relación con Categoria
-private float precioUnitario;
-private int stock;
-private String imagen;
+
+    private int idProducto;
+    private String nombreProducto;
+    private String descripcionProducto;
+    private int idCategoria; // Relación con Categoria
+    private float precioUnitario;
+    private int stock;
+    private String imagen;
+
+    public Producto() {
+    }
+
+    public Producto(int idProducto, String nombreProducto, String descripcionProducto, int idCategoria, float precioUnitario, int stock, String imagen) {
+        this.idProducto = idProducto;
+        this.nombreProducto = nombreProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.idCategoria = idCategoria;
+        this.precioUnitario = precioUnitario;
+        this.stock = stock;
+        this.imagen = imagen;
+    }
 
     public int getIdProducto() {
         return idProducto;
@@ -75,18 +87,4 @@ private String imagen;
         this.imagen = imagen;
     }
 
-    public Producto() {
-    }
-
-    public Producto(int idProducto, String nombreProducto, String descripcionProducto, int idCategoria, float precioUnitario, int stock, String imagen) {
-        this.idProducto = idProducto;
-        this.nombreProducto = nombreProducto;
-        this.descripcionProducto = descripcionProducto;
-        this.idCategoria = idCategoria;
-        this.precioUnitario = precioUnitario;
-        this.stock = stock;
-        this.imagen = imagen;
-    }
-
-    
 }

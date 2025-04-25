@@ -6,16 +6,25 @@ package Modelo;
 
 /**
  *
- * @author Dell Notebook
+ * @author Gena
  */
-// Clase DetalleCompra
 public class DetalleCompra {
+    private int idDetalleCompra;
+    private int idCompra; // Relación con Compra
+    private int idProducto; // Relación con Producto
+    private int cantidad;
+    private float precioUnitario;
+
+    public DetalleCompra() {
+    }
     
-private int idDetalleCompra;
-private int idCompra; // Relación con Compra
-private int idProducto; // Relación con Producto
-private int cantidad;
-private float precioUnitario;
+    public DetalleCompra(int idDetalleCompra, int idCompra, int idProducto, int cantidad, float precioUnitario) {
+        this.idDetalleCompra = idDetalleCompra;
+        this.idCompra = idCompra;
+        this.idProducto = idProducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+    }
 
     public int getIdDetalleCompra() {
         return idDetalleCompra;
@@ -57,16 +66,5 @@ private float precioUnitario;
         this.precioUnitario = precioUnitario;
     }
 
-    public DetalleCompra() {
-    }
-
-    public DetalleCompra(int idDetalleCompra, int idCompra, int idProducto, int cantidad, float precioUnitario) {
-        this.idDetalleCompra = idDetalleCompra;
-        this.idCompra = idCompra;
-        this.idProducto = idProducto;
-        this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
-    }
-
-   
+    
 }
