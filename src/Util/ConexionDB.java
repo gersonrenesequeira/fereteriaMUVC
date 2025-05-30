@@ -3,27 +3,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Util;
+
+/**
+ *
+ * @author Gena
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-/**
- *
- * @author Dell Notebook
- */
+
 public class ConexionDB {
     private static final String URL = "jdbc:mysql://localhost:3306/ferreteria_bd";
-    private static final String USAER = "root";
+    private static final String USER = "root"; // Cambia por tu usuario
     private static final String PASSWORD = "gerson2024";
     
     public static Connection getConnection() throws SQLException {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USAER, PASSWORD);
+            return DriverManager.getConnection(URL, USER, PASSWORD);
         } catch (ClassNotFoundException e) {
             throw new SQLException("Driver de MySQL no encontrado", e);
         }
+        
     }
-    
     public static void main(String[] args) {
         try {
             Connection c = getConnection();

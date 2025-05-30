@@ -6,17 +6,24 @@ package Vista;
 
 /**
  *
- * @author Usuario
+ * @author Gena
  */
 public class VistaPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form vistaPrincipal
+     * Creates new form VistaPrincipal
      */
-    public VistaPrincipal() {
+      public VistaPrincipal() {
         initComponents();
         opciones.addTab("Categorias", new VistaCategorias());
-         opciones.addTab("Producto", new VistaProductos());
+        opciones.addTab("Empleados", new VistaEmpleados());
+        opciones.addTab("Clientes", new VistaClientes());
+        opciones.addTab("Productos", new VistaProductos());
+        opciones.addTab("Usuarios", new VistaUsuarios());
+        opciones.addTab("Ventas", new VistaVentas());
+        opciones.addTab("Compras", new VistaCompras());
+        opciones.addTab("Consultas con IA", new VistaConsultasDinamicas());
+            
     }
 
     /**
@@ -31,14 +38,15 @@ public class VistaPrincipal extends javax.swing.JFrame {
         opciones = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
-        setResizable(false);
+        setTitle("FerreteriaNET");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(opciones, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 788, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -73,7 +81,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(VistaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
